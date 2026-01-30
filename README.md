@@ -16,3 +16,12 @@ base_path/OUTPUT_PAPER_YYYYmmdd_HHMMSS/
 - example_output/: selected figures & summary tables (for display)
 - docs/: run params + R session info (for reproducibility)
 - data/: instructions only (no raw data uploaded)
+
+## Preview
+### Cumulative portfolio performance
+![BMAdj VW](example_output/Fig_Cum_Port_BMAdj_VW.png)
+![BMAdj EW](example_output/Fig_Cum_Port_BMAdj_EW.png)
+
+### Factor series comparison
+![Factors VW](example_output/Fig_Cum_Factors_VW.png)
+![Factors EW](example_output/Fig_Cum_Factors_EW.png)
