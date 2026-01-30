@@ -1,0 +1,15 @@
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# Outputs (DO NOT COMMIT)
+OUTPUT_PAPER_*/
+*.zip
+*.rds
+
+# Raw data (DO NOT COMMIT)
+data_raw/
+*.xlsx
+*.xls

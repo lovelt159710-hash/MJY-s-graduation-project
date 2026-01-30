@@ -1,0 +1,2 @@
+"run_id","base_path","min_stocks_per_month","winsor_prob","nw_lag","industry_year_used","bm_scale_divisor"
+"20260129_194713","D:/Graduation Project",200,0.01,3,2024,1000
