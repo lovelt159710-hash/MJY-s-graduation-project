@@ -1,0 +1,4 @@
+"capital_spec","spec_label","rows","stocks","months","min_date","max_date"
+"baseline","Baseline_RDplusSGA",632687,5351,210,"2008-07-01","2025-12-01"
+"rd_only","RD_only",632687,5351,210,"2008-07-01","2025-12-01"
+"admin_only","RD_plus_AdminOnly",632687,5351,210,"2008-07-01","2025-12-01"

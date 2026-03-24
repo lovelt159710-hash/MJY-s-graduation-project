@@ -1,0 +1,2 @@
+"run_id","base_path","min_stocks_per_month","winsor_prob","nw_mode","nw_lag","nw_lag_cap","bm_denom_mode_main","use_st_filter","st_drop_rule","st_source_file","industry_year_used","bm_scale_divisor"
+"20260319_144318","D:/Graduation Project",200,0.01,"auto",3,12,"lag_me",FALSE,"any_st_day_in_month",NA,2024,1000

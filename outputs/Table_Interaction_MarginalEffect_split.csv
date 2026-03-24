@@ -1,0 +1,4 @@
+"term","coef","tval","pval","n"
+"Delta_BM (Big baseline)","0.0310**","(2.04)","0.043",210
+"Delta_BM:Small (increment)","0.0252***","(2.68)","0.008",210
+"Delta_BM | Small marginal","0.0562***","(3.47)","<0.001",210

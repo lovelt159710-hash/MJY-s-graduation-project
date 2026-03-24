@@ -1,0 +1,136 @@
+=== RUN START ===
+run_id     = 20260319_144318 
+output_dir = D:/Graduation Project/OUTPUT_PAPER_20260319_144318 
+
+
+[A] 读取基础信息（上市日期+行业）...
+[READ] folder= Annual Table of Basic Information of Listed Companies  | file= STK_LISTEDCOINFOANL.xlsx 
+industry_year_used = 2024 
+
+[B] 读取月度收益与市值...
+[READ] folder= Monthly stock return rate file  | file= TRD_Mnth.xlsx 
+[DIAG] Ret_raw median |value| = 0.0724 
+[INFO] 判断为小数口径 -> 保持原值
+
+--- df_ret ---
+rows = 712971  | stocks = 5446  | months = 228  | Date = 2007-01-01 ~ 2025-12-01 
+
+[C] 读取年度报表（RD/BE/SGA）并计算 PIM...
+[READ] folder= Research and Development Investment Status Table  | file= PT_LCRDSPENDING.xlsx 
+[READ] folder= Balance Sheet  | file= FS_Combas.xlsx 
+[READ] folder= Income Statement  | file= FS_Comins.xlsx 
+
+[C2] 读取可选 ST（日频）并转月频...
+[ST] use_st_filter = FALSE -> skip reading ST file.
+[ST] no usable ST monthly flags generated.
+
+[D] 读取 FF3（月度）...
+[READ] folder= Three-factor model indicators (monthly)  | file= STK_MKT_THRFACMONTH.xlsx 
+
+[E] 构造最终月度面板 df_final2_f...
+
+--- df_final2_f ---
+rows = 632687  | stocks = 5351  | months = 210  | Date = 2008-07-01 ~ 2025-12-01 
+final panel: months = 210  stocks = 5351 
+[1] TRUE
+
+[F] 输出 Table1 / Monthly_n / 分组单调性...
+[1] TRUE
+[1] TRUE
+[1] TRUE
+
+[G] 输出 5×组合、因子序列、Mean+NW、Spanning、Delta~FF3...
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+
+[H] 输出 Size×BM 双排序...
+[1] TRUE
+
+[I] 输出 Fama-MacBeth（WLS/OLS/Size/Interaction）...
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+
+[J] 输出 迁移矩阵 / shift_rate / dQ...
+[1] TRUE
+[1] TRUE
+[1] TRUE
+
+[K] 输出 Robust cut（2012/2015/2018）...
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+
+[L] 输出 高无形行业 Top 1/3 子样本...
+[1] TRUE
+[1] TRUE
+[1] TRUE
+
+[M] 输出 RDS/sessionInfo & 输出自检 & ZIP...
+[OK] Output self-check passed. All expected files exist.
+
+ZIP created?  TRUE  ->  D:/Graduation Project/OUTPUT_PAPER_20260319_144318.zip 
+
+=== RUN END ===
+
+[N] Supplement: optional FF5 + missing-input robustness + phi sensitivity...
+[FF5] optional file detected: D:/Graduation Project/FF5_monthly/STK_MKT_FIVEFACMONTH.xlsx 
+[FF5] rows after valid-date filter = 6654 
+[FF5] rows matching MarkettypeID P9709 = 651 
+[FF5] rows matching Portfolios 1 = 217 
+[FF5] final monthly rows = 217 
+[FF5] rows in ff5_monthly = 217 
+[FF5] overlap VW = 210 
+[FF5] overlap EW = 210 
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[Sensitivity] phi_org = 0.2 
+[Sensitivity] phi_org = 0.3 
+[Sensitivity] phi_org = 0.4 
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[CapitalSpec] Baseline_RDplusSGA
+[CapitalSpec] RD_only
+[CapitalSpec] RD_plus_AdminOnly
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[Debug] June ME reference diagnostics...
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[1] TRUE
+[Debug] June ME panel compare summary:
+# A tibble: 1 × 9
+       n same_raw_share same_adj_share same_delta_share same_k_share
+   <int>          <dbl>          <dbl>            <dbl>        <dbl>
+1 622632         0.0866         0.0866           0.0999       0.0999
+# ℹ 4 more variables: mean_abs_diff_raw <dbl>, mean_abs_diff_adj <dbl>,
+#   mean_abs_diff_delta <dbl>, mean_abs_diff_k <dbl>
+[Debug] June ME ref compare summary:
+# A tibble: 1 × 6
+       n share_lag_equals_june_ref share_ref_equal share_june_ref_missing
+   <int>                     <dbl>           <dbl>                  <dbl>
+1 639434                    0.0879          0.0879                 0.0169
+# ℹ 2 more variables: share_lag_ref_missing <dbl>, mean_abs_ref_diff <dbl>
+[OK] supplemental ZIP refreshed?  TRUE  ->  D:/Graduation Project/OUTPUT_PAPER_20260319_144318.zip 
+
+=== SUPPLEMENT END ===
