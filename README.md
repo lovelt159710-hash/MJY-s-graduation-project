@@ -2,8 +2,6 @@
 
 无形资产投资费用化对价值信号扭曲的实证研究 —— 基于中国 A 股市场的永续盘存法重构
 
-本仓库包含毕业论文的完整实证代码与输出结果。
-
 ## Pipeline 概览
 
 数据清洗 → 永续盘存法重构无形资本 → 月度面板 → 五分组组合 / 因子（Adj / Raw / Delta）
@@ -11,13 +9,6 @@
 → Fama–MacBeth 回归（含交互项边际效应）→ 迁移矩阵（Raw→Adj）
 → 多切点稳健性 → 高无形行业子样本 → φ 敏感性分析
 → 资本化口径替代 → June ME 分母替代 → NW 带宽比较 → 作图与打包输出
-
-## 脚本版本
-
-| 文件 | 说明 |
-|------|------|
-| `paper_style_annotated_pipeline.R` | 基础版（核心 A–M 段，三因子） |
-| `paper_style_full_final_ff5safe_revisionGapfill_debugJuneFIX_20260319.R` | 完整版（在基础版上新增 FF5、缺失值稳健性、φ 敏感性、资本化口径替代、June ME、NW 带宽比较等 Supplement 模块） |
 
 ## 如何运行
 
@@ -29,9 +20,8 @@
 ## 文件结构
 
 ```
-├── paper_style_annotated_pipeline.R                          # 基础版脚本
-├── paper_style_full_final_..._20260319.R                     # 完整版脚本
-├── outputs/                          # 完整版运行输出（2026-03-19）
+├── paper_style_full_final_*.R        # 主脚本（实证全流程）
+├── outputs/                          # 运行输出
 │   ├── Table1_DescStats.csv          #   描述性统计
 │   ├── Portfolios_BMAdj/BMRaw.csv    #   五分组收益（VW/EW）
 │   ├── Factor_Series_*.csv           #   因子时间序列
@@ -47,7 +37,7 @@
 │   ├── Supplement_*.csv              #   补充检验（资本化口径 / June ME / NW 带宽）
 │   ├── Fig_*.png                     #   累积收益图
 │   └── RUN_PARAMS.csv                #   运行参数记录
-├── example_output/                   # 基础版示例图表（展示用）
+├── example_output/                   # 早期示例图表
 ├── docs/                             # 运行环境信息（复现用）
 ├── data/                             # 数据说明（不含原始数据）
 ├── .gitignore
@@ -58,13 +48,15 @@
 
 ### Cumulative portfolio performance
 
-![BMAdj VW](example_output/Fig_Cum_Port_BMAdj_VW.png)
-![BMAdj EW](example_output/Fig_Cum_Port_BMAdj_EW.png)
+![BMAdj VW](https://raw.githubusercontent.com/lovelt159710-hash/MJY-s-graduation-project/main/outputs/Fig_Cum_Port_BMAdj_VW.png)
+
+![BMAdj EW](https://raw.githubusercontent.com/lovelt159710-hash/MJY-s-graduation-project/main/outputs/Fig_Cum_Port_BMAdj_EW.png)
 
 ### Factor series comparison
 
-![Factors VW](example_output/Fig_Cum_Factors_VW.png)
-![Factors EW](example_output/Fig_Cum_Factors_EW.png)
+![Factors VW](https://raw.githubusercontent.com/lovelt159710-hash/MJY-s-graduation-project/main/outputs/Fig_Cum_Factors_VW.png)
+
+![Factors EW](https://raw.githubusercontent.com/lovelt159710-hash/MJY-s-graduation-project/main/outputs/Fig_Cum_Factors_EW.png)
 
 ## 核心方法
 
